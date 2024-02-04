@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
+import { Column } from "./column.js";
 
 export function Background() {
   useEffect(() => {
@@ -12,27 +13,39 @@ export function Background() {
     if (!context) return;
 
     const fontSize = 16;
-
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    context.font = `bold ${fontSize}px monospace`;
-    context.fillStyle = "green";
+    const columns: Column[] = [];
+    const columnsCount = canvas.width / fontSize;
 
+    for (let i = 0; i < columnsCount; i++) {
+      columns.push(new Column(i * fontSize, fontSize, canvas.height, context));
+    }
+
+    context.font = `bold ${fontSize}px monospace`;
     let y = 0;
 
     function animate(
       context: CanvasRenderingContext2D,
       fontSize: number,
-      y: number
-    ): void {
-      context.fillText("M", 100, y);
-      y += fontSize;
+      y: number,
+      canvas: HTMLCanvasElement
+    ) {
+      context.fillStyle = "rgba(0, 0, 0, 0.05";
+      context.fillRect(0, 0, canvas.width, canvas.height);
 
-      setTimeout(() => requestAnimationFrame(animate), 50);
+      context.fillStyle = "green";
+      columns.forEach((column) => column.drawSymbol());
+
+      setTimeout(
+        () =>
+          requestAnimationFrame(() => animate(context, fontSize, y, canvas)),
+        50
+      );
     }
 
-    animate(context, fontSize, y);
+    animate(context, fontSize, y, canvas);
 
     return () => {
       context.clearRect(0, 0, canvas.width, canvas.height);
