@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
+import { theme } from "../../styles/Theme";
 
 export const Footer = () => {
   return (
@@ -10,22 +11,42 @@ export const Footer = () => {
         <SocialList>
           <SocialItem>
             <SocialLink>
-              <Icon iconId={"instagram"} />
+              <Icon
+                width={"88"}
+                height={"80"}
+                viewBox={"0 0 88 86"}
+                iconId={"github"}
+              />
             </SocialLink>
           </SocialItem>
           <SocialItem>
             <SocialLink>
-              <Icon iconId={"telegram"} />
+              <Icon
+                width={"88"}
+                height={"80"}
+                viewBox={"0 0 88 86"}
+                iconId={"github"}
+              />
             </SocialLink>
           </SocialItem>
           <SocialItem>
             <SocialLink>
-              <Icon iconId={"github"} />
+              <Icon
+                width={"88"}
+                height={"80"}
+                viewBox={"0 0 88 86"}
+                iconId={"github"}
+              />
             </SocialLink>
           </SocialItem>
           <SocialItem>
             <SocialLink>
-              <Icon iconId={"linkedin"} />
+              <Icon
+                width={"88"}
+                height={"80"}
+                viewBox={"0 0 88 86"}
+                iconId={"github"}
+              />
             </SocialLink>
           </SocialItem>
         </SocialList>
@@ -36,17 +57,45 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-  background-color: #63c734;
+  background-color: ${theme.colors.primaryBgr};
+  padding: 40px 0;
 `;
 
-const Name = styled.span``;
+const Name = styled.span`
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 3px;
+`;
 
 const SocialList = styled.ul`
   display: flex;
+  gap: 20px;
+  margin: 30px 0;
 `;
 
 const SocialItem = styled.li``;
 
-const SocialLink = styled.a``;
+const SocialLink = styled.a`
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
 
-const Copyright = styled.small``;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: ${theme.colors.font};
+
+  &:hover {
+    color: ${theme.colors.accent};
+    transform: translateY(-4px);
+  }
+`;
+
+const Copyright = styled.small`
+  font-weight: 400;
+  font-size: 12px;
+  /* text-align: center; */
+  opacity: 0.5;
+`;

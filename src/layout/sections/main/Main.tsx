@@ -28,7 +28,7 @@ export const Main = () => {
 
 const StyledMain = styled.div`
   min-height: 100vh;
-  background-color: purple;
+  background-color: ${theme.colors.secondaryBgr};
 
   display: flex;
 `;
