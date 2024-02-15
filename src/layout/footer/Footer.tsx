@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { theme } from "../../styles/Theme";
+import { font } from "../../styles/Common";
 
 export const Footer = () => {
   return (
@@ -62,8 +63,7 @@ const StyledFooter = styled.footer`
 `;
 
 const Name = styled.span`
-  font-weight: 700;
-  font-size: 22px;
+  ${font({ weight: 700, Fmax: 22, Fmin: 16 })}
   letter-spacing: 3px;
 `;
 
@@ -91,11 +91,15 @@ const SocialLink = styled.a`
     color: ${theme.colors.accent};
     transform: translateY(-4px);
   }
+
+  @media ${theme.media.tablet} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const Copyright = styled.small`
   font-weight: 400;
   font-size: 12px;
-  /* text-align: center; */
   opacity: 0.5;
 `;
