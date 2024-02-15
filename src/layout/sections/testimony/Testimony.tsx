@@ -1,32 +1,24 @@
-import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Slider } from "../../../components/slider/Slider";
 import { Icon } from "../../../components/icon/Icon";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { IconWrapper } from "../skills/skill/Skill";
 import { Container } from "../../../components/Container";
+import { S } from "../skills/Skills_Styles";
+import { St } from "./Testimony_Styles";
+import React from "react";
 
-export const Testimony = () => {
+export const Testimony: React.FC = () => {
   return (
-    <StyledTestimony>
+    <St.StyledTestimony>
       <Container>
         <SectionTitle>Testimony</SectionTitle>
         <FlexWrapper direction={"column"} align={"center"}>
-          <IconWrapper>
+          <S.IconWrapper>
             <Icon iconId={"react"} />
-          </IconWrapper>
+          </S.IconWrapper>
           <Slider />
         </FlexWrapper>
       </Container>
-    </StyledTestimony>
+    </St.StyledTestimony>
   );
 };
-
-const StyledTestimony = styled.section`
-  background-color: #af0a78;
-  min-height: 50vh;
-
-  ${IconWrapper} {
-    margin: 22px 0 82px;
-  }
-`;

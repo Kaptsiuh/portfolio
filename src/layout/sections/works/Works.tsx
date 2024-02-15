@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { TabMenu } from "./menu/TabMenu";
 import { Work } from "./work/Work";
@@ -6,42 +5,42 @@ import project1 from "./../../../assets/images/project1.png";
 import project2 from "./../../../assets/images/project2.png";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
+import React from "react";
+import { S } from "./Works_Styles";
 
-const WorksItems = ["All", "Landing page", "React", "spa"];
+const worksItems = ["All", "Landing page", "React", "spa"];
 
-export const Works = () => {
+const workData = [
+  {
+    title: "Social Network",
+    src: project1,
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolorum, laborum voluptatum totam maxime repudiandae?",
+  },
+  {
+    title: "Timer",
+    src: project2,
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolorum, laborum voluptatum totam maxime repudiandae?",
+  },
+];
+
+export const Works: React.FC = () => {
   return (
-    <StyledWorks>
+    <S.StyledWorks>
       <Container>
         <SectionTitle>My Works</SectionTitle>
-        <TabMenu menuItems={WorksItems} />
+        <TabMenu menuItems={worksItems} />
         <FlexWrapper
           justify={"space-between"}
           align={"flex-start"}
           wrap={"wrap"}
         >
-          <Work
-            src={project1}
-            title={"Social Network"}
-            text={
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolorum, laborum voluptatum totam maxime repudiandae?"
-            }
-          />
-          <Work
-            src={project2}
-            title={"Timer"}
-            text={
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolorum, laborum voluptatum totam maxime repudiandae?"
-            }
-          />
+          {workData.map((w, index) => {
+            return (
+              <Work key={index} title={w.title} src={w.src} text={w.text} />
+            );
+          })}
         </FlexWrapper>
       </Container>
-    </StyledWorks>
+    </S.StyledWorks>
   );
 };
-
-const StyledWorks = styled.section`
-  ${FlexWrapper} {
-    gap: 30px;
-  }
-`;
