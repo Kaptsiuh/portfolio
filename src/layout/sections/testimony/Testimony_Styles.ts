@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { S } from "../skills/Skills_Styles";
 
 const StyledTestimony = styled.section`
+  position: relative;
   background-color: #af0a78;
   min-height: 50vh;
 
