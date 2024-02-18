@@ -11,7 +11,7 @@ const StyledMain = styled.div`
 
 const PhotoWrapper = styled.div`
   position: relative;
-  z-index: 0;
+  z-index: 110;
   margin-top: 65px;
 
   &::before {
