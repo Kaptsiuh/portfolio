@@ -3,6 +3,7 @@ import { Link } from "../../../components/Link";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { theme } from "../../../styles/Theme";
 import { Button } from "../../../components/Button";
+import { motion } from "framer-motion";
 
 const StyledWorks = styled.section`
   ${FlexWrapper} {
@@ -12,8 +13,6 @@ const StyledWorks = styled.section`
 
 const StyledWork = styled.div`
   background-color: ${theme.colors.secondaryBgr};
-  width: 330px;
-  flex-grow: 1;
 
   ${Link} {
     padding: 10px 0;
@@ -21,10 +20,6 @@ const StyledWork = styled.div`
     & + ${Link} {
       margin-left: 20px;
     }
-  }
-
-  @media ${theme.media.desktop} {
-    max-width: 540px;
   }
 `;
 
