@@ -39,12 +39,6 @@ export const Footer: React.FC = () => {
               </S.SocialItem>
             );
           })}
-          <Icon
-            width={"88"}
-            height={"80"}
-            viewBox={"0 0 88 86"}
-            iconId={"github"}
-          />
         </S.SocialList>
         <S.Copyright>2024 Dzmitry Kaptsiuh, All Rights Reserved.</S.Copyright>
       </FlexWrapper>

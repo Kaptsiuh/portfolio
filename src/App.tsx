@@ -8,6 +8,7 @@ import { Testimony } from "./layout/sections/testimony/Testimony";
 import { Contacts } from "./layout/sections/contacts/Contacts";
 import { Footer } from "./layout/footer/Footer";
 import { Particle } from "./components/particle/Particle";
+import GoTopBtn from "./components/particle/goTopBtn/GoTopBtn";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Testimony />
       <Contacts />
       <Footer />
+      <GoTopBtn />
     </div>
   );
 }
