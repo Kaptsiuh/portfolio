@@ -30,5 +30,6 @@ export const Button = styled.button`
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
+    transition: ${theme.animations.transition};
   }
 `;

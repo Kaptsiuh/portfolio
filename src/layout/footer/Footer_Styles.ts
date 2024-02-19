@@ -32,6 +32,7 @@ const SocialLink = styled.a`
   justify-content: center;
 
   color: ${theme.colors.font};
+  transition: ${theme.animations.transition};
 
   &:hover {
     color: ${theme.colors.accent};
